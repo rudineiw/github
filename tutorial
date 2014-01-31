@@ -1,0 +1,42 @@
+O Git é um sistema de controle de versões.
+GitHub é um servidor onde podemos enviar e compartilhar nossos projetos. Você pode enviar um ou vários projeto de qualquer linguagem de programação.
+
+Primeiros passos:
+Acesse o site do GitHub - http://github.com e faça seu cadastro. 
+
+Depois vamos para o terminal e digite os comandos a seguir:
+
+#Instalação do Git
+$ sudo apt-get install git-core
+
+#Configuração do seu nome (nome que irá aparecerá nos commits no GitHub)
+$ git config --global user.name "seu nome aqui"
+
+#Configuração do seu e-mail, recomendo usar o mesmo e-mail do cadastro do GitHub
+$ git config --global user.email "your_email@youremail.com"
+
+#Criando sua chave ssh, digite o comando, e parte ENTER até solicitar a criação de uma senha (favor não esquecê-la)
+$ ssh-keygen -t rsa -C "your_email@youremail.com"
+
+#Instalando o xclip (aplicativo que copia para área de transferência o resultado se um comando)
+$ sudo apt-get install xclip
+
+#Copiando o conteúdo de sua chave ssh para área de transferência
+$ xclip -sel clip < ~/.ssh/id_rsa.pub
+
+#Cadastrando sua chave ssh no GitHub
+Abra a página do GitHub e vá nas configurações de chave ssh.
+Clique em "Add ssh key"
+Dê um nome para sua chave
+E no campo "Key" cole sua chave que foi copiada para a área de transferência anteriormente com (Ctrl+v)
+Após clique no botão verde "Add Key"
+
+#Terminando a configuração...
+$ ssh -T git@github.com
+$ yes
+
+#Após esses comando deve aparecer uma mensagem contendo o seu usuário do GitHub
+
+#Vídeos recomendados
+http://www.youtube.com/watch?v=neDiLHwXSVo
+http://www.youtube.com/watch?v=UMhskLXJuq4
